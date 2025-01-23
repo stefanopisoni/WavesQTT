@@ -20,5 +20,5 @@ usol(x) =a*(-1+4/(1+4*HH(x)^2))
 # plot
 p=plot(x,abs.(ψ₀))
 xlims!(-10, 10)
-plot!(x,abs.(mps_to_discrete_function(ψₜ)))
+plot!(x,abs.(ψₜ))
 savefig(p,"plot.png")
