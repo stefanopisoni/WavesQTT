@@ -37,6 +37,7 @@ function qtt_splitsteps(v::Vector{ComplexF64}, n::Int, xrange::Tuple{Float64, Fl
     		ψₜ = apply_idft_mpo(k²ℱψₜ; kwargs...)
 	end
 	return ψₜ
+end
 
 ###################################
 ### FFT-based Split-Step method ###
