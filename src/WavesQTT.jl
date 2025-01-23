@@ -8,6 +8,7 @@ using FFTW
 
 include("splitstep.jl")
 
-export qtt_splitsteps
+export qtt_splitsteps,
+fft_splitsteps
 
 end
