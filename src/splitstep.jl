@@ -56,7 +56,7 @@ function fft_splitsteps(v::Vector{ComplexF64}, n::Int, xrange::Tuple{Float64, Fl
 	λ(ψ_var) = exp(1im*Δt*(2*dot(ψ_var,ψ_var)))^(1/n)
 	
 	# Initial state
-	ψₜ .= v
+	ψₜ = v
 	
 	# Split-Step loop
 	for t in 1:tsteps
