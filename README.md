@@ -25,7 +25,7 @@ The equation is split into two parts:
 
 The time evolution over a small time step $\Delta t$ is computed as follows:
 
-1. Apply the nonlinear evolution: $\psi(x, t_0 + \Delta t) = \psi(x, t_0) e^{i N(\psi) \Delta t}.$
+1. Apply the nonlinear evolution: $\psi(x, t_0 + \Delta t) = \psi(x, t_0) e^{-i N(\psi) \Delta t}.$
 
 2. Apply the linear evolution using the Fourier Transform: $\hat{\psi}(k, t + \Delta t) = \hat{\psi}(k, t_0) e^{-i k^2 \Delta t}$, where $\hat{\psi}(k, t)$ is the Fourier transform of $\psi(x, t)$.
 
@@ -39,8 +39,7 @@ Note that for the linear step for a $n$-component discretized function is given 
 
 $$
 e^{-i k^2 \Delta t} \hat{\psi}(k, t_0)  =
-(\frac{2\pi}{n\Delta x})^2
-[1^2,2^2,\dots,n^2]
+\left[e^{-i\Delta t\left(\frac{1\times2\pi}{n\Delta x}\right)^2}, e^{-i\Delta t\left(\frac{2\times2\pi}{n\Delta x}\right)^2}, \dots, e^{-i\Delta t\left(\frac{n\times2\pi}{n\Delta x}\right)^2}\right]
 \cdot
 \begin{bmatrix}
 \hat{\psi}_1\\
