@@ -1,3 +1,4 @@
+push!(LOAD_PATH, "/Users/stefanopisoni/Documents/Work/Codes/NLSE/WavesQTT/src")
 using WavesQTT
 using Plots
 
@@ -15,10 +16,10 @@ usol(x) =a*(-1+4/(1+4*HH(x)^2))
 ψ₀ = Complex{Float64}[usol(i) for i in x]
 
 # QTT split-step evolution
-ψₜ = fft_splitsteps(ψ₀,n,(-50.0,50.0), Δt, tsteps)
+ψₜ = fft_splitsteps(ψ₀,n,(-30.0,30.0), Δt, tsteps)
 
 # plot
 p=plot(x,abs.(ψ₀))
 xlims!(-10, 10)
 plot!(x,abs.(ψₜ))
-savefig(p,"plot.png")
+savefig(p,"plot_fft.png")

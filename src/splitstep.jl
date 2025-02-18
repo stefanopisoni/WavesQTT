@@ -50,10 +50,10 @@ function fft_splitsteps(v::Vector{ComplexF64}, n::Int, xrange::Tuple{Float64, Fl
 	
 	# Squared frequencies/ Fourier coefficients
 	k² = ((2*pi*fftfreq(N))./Δx).^2
-	Dₓₓ = [exp(1im*Δt*i) for i in k²]
+	Dₓₓ = [exp(-1im*Δt*i) for i in k²] # - sign missing?
 	
 	# Nonlinear scalar term
-	λ(ψ_var) = exp(1im*Δt*(2*dot(ψ_var,ψ_var)))^(1/n)
+	λ(ψ_var) = exp(1im*Δt*(2*dot(ψ_var,ψ_var))) #^(1/n) # Why dividing by n?
 	
 	# Initial state
 	ψₜ = v
